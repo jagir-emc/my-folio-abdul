@@ -135,30 +135,25 @@ const Works = () => {
               onSlideChange={handleSlideChange}
               className="xl:h-[520px] flex"
             >
-              {projects.map(
-                (
-                  { num, cate, title, desc, stack, img, live, github },
-                  index
-                ) => {
-                  return (
-                    <SwiperSlide className="w-full">
-                      <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                        {/*Overlay*/}
-                        <div className="absolute top-0 bottom-0 size-full bg-black/10 z-10"></div>
-                        {/*Image*/}
-                        <div className="relative size-full">
-                          <Image
-                            className="object-cover"
-                            src={project.img}
-                            alt="Image"
-                            fill
-                          />
-                        </div>
+              {projects.map(({ img }, index) => {
+                return (
+                  <SwiperSlide className="w-full">
+                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                      {/*Overlay*/}
+                      <div className="absolute top-0 bottom-0 size-full bg-black/10 z-10"></div>
+                      {/*Image*/}
+                      <div className="relative size-full">
+                        <Image
+                          className="object-cover"
+                          src={project.img}
+                          alt="Image"
+                          fill
+                        />
                       </div>
-                    </SwiperSlide>
-                  );
-                }
-              )}
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
               <SliderBtn
                 containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
                 btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
