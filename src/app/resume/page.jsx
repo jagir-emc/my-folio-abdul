@@ -1,18 +1,30 @@
 "use client";
 
-import { info } from "autoprefixer";
+// import { info } from "autoprefixer";
 import { delay, motion } from "framer-motion";
+// import {
+//   FaHtml5,
+//   FaCss3,
+//   FaJs,
+//   FaReact,
+//   FaNodeJs,
+//   FaFigma,
+// } from "react-icons/fa";
 import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaNodeJs,
-  FaFigma,
-} from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
-import bage from "@/assets/images/resume/badge.svg";
-import cap from "@/assets/images/resume/cap.svg";
+  SiGoogleanalytics,
+  SiGoogleads,
+  SiSemrush,
+  SiMailchimp,
+  SiCanva,
+  SiGoogletagmanager,
+  SiBuffer,
+  SiWhatsapp,
+} from "react-icons/si";
+import { FaMeta, FaLeaf, FaDatabase } from "react-icons/fa6";
+import { MdOutlineAutorenew } from "react-icons/md";
+// import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+// import bage from "@/assets/images/resume/badge.svg";
+// import cap from "@/assets/images/resume/cap.svg";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -27,153 +39,152 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 const about = {
   title: "About Me",
-  desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ullam magnam incidunt molestiae nobis. Eius maxime sapiente rem illo autem.",
+  desc1:
+    "I am the founder of Reach Technologies, a start-up that provides innovative and impactful solutions for digital marketing and consulting. My passion is to create and implement effective strategies for online platforms and websites, using my skills and knowledge in advanced digital marketing, which I acquired through multiple courses.",
+  desc2:
+    "Before launching my venture, I gained valuable experience as a Data Analyst at Stats Perform, a sports-based company. There, I worked with backend databases and performed data analysis and visualization, using various tools and techniques. I also have a background in Mechanical Engineering, having graduated from Jawahar Engineering College in 2016. I am always eager to learn new things and explore new challenges, and I believe in giving my 100 percent to the work and to achieve the company's goals.",
   info: [
     {
-      fieldname: "Name",
-      fieldValue: "Abdul Rahaman Jagirdhar",
-    },
-    {
-      fieldname: "Phone",
-      fieldValue: "(+91) 82708 35874",
-    },
-    {
-      fieldname: "Experience",
-      fieldValue: "06+ Months",
+      fieldname: "Email",
+      fieldValue: "divakardj76.dv@gmail.com",
     },
     {
       fieldname: "Linkedin",
-      fieldValue: "Abdul Rahaman Jagirdhar",
-    },
-    {
-      fieldname: "Nationality",
-      fieldValue: "Indian",
-    },
-    {
-      fieldname: "Email",
-      fieldValue: "abdurrahamanjagirdhar@gmail.com",
-    },
-    {
-      fieldname: "Freelance",
-      fieldValue: "Available",
+      fieldValue: "Divakar Asokan",
     },
     {
       fieldname: "Language",
-      fieldValue: "English, Tamil, Urudu, Arabic",
+      fieldValue: "English, Tamil",
     },
   ],
 };
 
 //Experience Data
 
-const experience = {
-  icon: bage,
-  title: "My Education",
-  desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ullam magnam incidunt molestiae nobis. Eius maxime sapiente rem illo autem.",
-  items: [
-    {
-      Company: "Error Makes Clever",
-      position: "Jr. full Stack Developer",
-      duration: "2024 Feb - present",
-    },
-    {
-      Company: "Tech Solutions Inc.",
-      position: "full Stack Developer",
-      duration: "2022 - present",
-    },
-    {
-      Company: "Tech Solutions Inc.",
-      position: "full Stack Developer",
-      duration: "2022 - present",
-    },
-    {
-      Company: "Tech Solutions Inc.",
-      position: "full Stack Developer",
-      duration: "2022 - present",
-    },
-    {
-      Company: "Tech Solutions Inc.",
-      position: "full Stack Developer",
-      duration: "2022 - present",
-    },
-    {
-      Company: "Tech Solutions Inc.",
-      position: "full Stack Developer",
-      duration: "2022 - present",
-    },
-  ],
-};
+// const experience = {
+//   icon: bage,
+//   title: "My Education",
+//   desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ullam magnam incidunt molestiae nobis. Eius maxime sapiente rem illo autem.",
+//   items: [
+//     {
+//       Company: "Error Makes Clever",
+//       position: "Jr. full Stack Developer",
+//       duration: "2024 Feb - present",
+//     },
+//     {
+//       Company: "Tech Solutions Inc.",
+//       position: "full Stack Developer",
+//       duration: "2022 - present",
+//     },
+//     {
+//       Company: "Tech Solutions Inc.",
+//       position: "full Stack Developer",
+//       duration: "2022 - present",
+//     },
+//     {
+//       Company: "Tech Solutions Inc.",
+//       position: "full Stack Developer",
+//       duration: "2022 - present",
+//     },
+//     {
+//       Company: "Tech Solutions Inc.",
+//       position: "full Stack Developer",
+//       duration: "2022 - present",
+//     },
+//     {
+//       Company: "Tech Solutions Inc.",
+//       position: "full Stack Developer",
+//       duration: "2022 - present",
+//     },
+//   ],
+// };
 //Education Data
 
-const education = {
-  icon: cap,
-  title: "My Experience",
-  desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ullam magnam incidunt molestiae nobis. Eius maxime sapiente rem illo autem.",
-  items: [
-    {
-      institute: "Error Makes Clever",
-      degree: "Full Stack Development",
-      duration: "2023",
-    },
-    {
-      institute: "Crescent University",
-      degree: "BA Arabic Litrature",
-      duration: "2020-2023",
-    },
-    {
-      institute: "University of Madras",
-      degree: "BBA Administration of Business",
-      duration: "2020-2023",
-    },
-    {
-      institute: "Crescent School",
-      degree: "Hr Secondary Study",
-      duration: "2019-2020",
-    },
-    {
-      institute: "AKT School",
-      degree: "10th Std",
-      duration: "2017-2018",
-    },
-  ],
-};
+// const education = {
+//   icon: cap,
+//   title: "My Experience",
+//   desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ullam magnam incidunt molestiae nobis. Eius maxime sapiente rem illo autem.",
+//   items: [
+//     {
+//       institute: "Error Makes Clever",
+//       degree: "Full Stack Development",
+//       duration: "2023",
+//     },
+//     {
+//       institute: "Crescent University",
+//       degree: "BA Arabic Litrature",
+//       duration: "2020-2023",
+//     },
+//     {
+//       institute: "University of Madras",
+//       degree: "BBA Administration of Business",
+//       duration: "2020-2023",
+//     },
+//     {
+//       institute: "Crescent School",
+//       degree: "Hr Secondary Study",
+//       duration: "2019-2020",
+//     },
+//     {
+//       institute: "AKT School",
+//       degree: "10th Std",
+//       duration: "2017-2018",
+//     },
+//   ],
+// };
 
 //Skillset Data
 const skills = {
   title: "My Skills",
-  desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ullam magnam incidunt molestiae nobis. Eius maxime sapiente rem illo autem.",
+  desc: "I provide insights and analysis, manage and optimize ad campaigns, enhance SEO strategies, design engaging content, handle tag management, streamline social media efforts, automate communication, and manage CRM and lead generation processes",
   skillList: [
     {
-      icon: <FaHtml5 />,
-      name: "HTML5",
+      icon: <SiGoogleanalytics />,
+      name: "Google Analytics",
     },
     {
-      icon: <FaCss3 />,
-      name: "CSS3",
+      icon: <SiGoogleads />,
+      name: "Google Ads",
     },
     {
-      icon: <FaJs />,
-      name: "Javascript",
+      icon: <FaMeta />,
+      name: "Meta Ads",
     },
     {
-      icon: <FaReact />,
-      name: "React.Js",
+      icon: <SiSemrush />,
+      name: "Seursh",
     },
     {
-      icon: <SiTailwindcss />,
-      name: "Tailwind CSS",
+      icon: <SiMailchimp />,
+      name: "Mailchimp",
     },
     {
-      icon: <SiNextdotjs />,
-      name: "Node.Js",
+      icon: <SiCanva />,
+      name: "Canva",
     },
     {
-      icon: <FaNodeJs />,
-      name: "Node.Js",
+      icon: <SiGoogletagmanager />,
+      name: "Google Tag Manager",
     },
     {
-      icon: <FaFigma />,
-      name: "Figma",
+      icon: <SiBuffer />,
+      name: "Buffer",
+    },
+    {
+      icon: <FaLeaf />,
+      name: "Sprout Social",
+    },
+    {
+      icon: <SiWhatsapp />,
+      name: "Whatsapp Apk Tool",
+    },
+    {
+      icon: <FaDatabase />,
+      name: "LeadSquared",
+    },
+    {
+      icon: <MdOutlineAutorenew />,
+      name: "Many Chat",
     },
   ],
 };
@@ -190,17 +201,17 @@ const Resume = () => {
     >
       <div className="container mx-auto">
         <Tabs
-          defaultValue="experience"
+          defaultValue="skills"
           className="flex flex-col xl:flex-row gap-14"
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-            <TabsTrigger value="experience">Experience</TabsTrigger>
-            <TabsTrigger value="education">Education</TabsTrigger>
+            {/* <TabsTrigger value="experience">Experience</TabsTrigger>
+            <TabsTrigger value="education">Education</TabsTrigger> */}
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About Me</TabsTrigger>
           </TabsList>
           <div className=" w-full">
-            <TabsContent value="experience" className="w-full">
+            {/* <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-7 text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
@@ -261,7 +272,7 @@ const Resume = () => {
                   </ul>
                 </ScrollArea>
               </div>
-            </TabsContent>
+            </TabsContent> */}
             <TabsContent value="skills" className="w-full h-full">
               <div className="flex flex-col gap-7">
                 <div className="flex flex-col gap-7 text-center xl:text-left">
@@ -300,19 +311,23 @@ const Resume = () => {
                 <div className="flex flex-col gap-7 text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{about.title}</h3>
                   <p className=" text-white/60 mx-auto xl:mx-0">
-                    {about.desc}
+                    {about.desc1}
                   </p>
-                  <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6  mx-auto xl:mx-0">
-                    {
-                      about.info.map(({fieldname,fieldValue},index)=>{
-                        return(
-                          <li key={index} className="flex items-center justify-center xl:justify-start gap-4 ">
-                            <span className="text-white/40">{fieldname}</span>
-                            <span className="">{fieldValue}</span>
-                          </li>
-                        )
-                      })
-                    }
+                  <p className=" text-white/60 mx-auto xl:mx-0">
+                    {about.desc2}
+                  </p>
+                  <ul className="flex-col gap-5">
+                    {about.info.map(({ fieldname, fieldValue }, index) => {
+                      return (
+                        <li
+                          key={index}
+                          className="flex  xl:justify-start gap-4 "
+                        >
+                          <span className="text-white/40">{fieldname}</span>
+                          <span className="">{fieldValue}</span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>

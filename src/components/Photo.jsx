@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import pic from "../assets/images/Abdull.png";
+import pic from "../assets/images/Diva.png";
 
 const Photo = () => {
   return (

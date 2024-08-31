@@ -22,17 +22,17 @@ const info = [
   {
     icon: <FaPhoneAlt />,
     title: "Phone",
-    desc: "(+91) 82708 35874",
+    desc: "(+91) 63798 75675, (+91) 88255 99232",
   },
   {
     icon: <FaEnvelope />,
     title: "Email",
-    desc: "jagirdharemc@gmail.com",
+    desc: "enquiry.reachtechnologies@gmail.com",
   },
   {
     icon: <FaMapMarkedAlt />,
     title: "Address",
-    desc: "Chennai, Tamil Nadu.",
+    desc: "Meenambalpuram Street, 33/A, Dr. Ambedkar Bridge, Kailasapuram, Mylapore, Chennai, Tamil Nadu 600004",
   },
 ];
 
