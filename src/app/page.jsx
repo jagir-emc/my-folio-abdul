@@ -22,7 +22,10 @@ const page = () => {
               I am the founder of Reach Technologies, a start-up that provides
               innovative and impactful solutions for digital marketing and
               consulting.
-            </p>
+            </p> 
+            <a href="Divabro.png" download>
+              <Button>Download</Button>
+            </a>
           </div>
           {/* //Photo */}
           <div className="order-1 xl:order-none mb-8 xl:mb-0">
