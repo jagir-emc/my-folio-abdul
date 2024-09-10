@@ -37,9 +37,8 @@ export async function POST(request) {
     await transport.verify();
     const mailMessage = await transport.sendMail({
       from: user,
-      to: "abdurrahamanvndlr@gmail.com",
-      cc: email,
-      subject: "Enquiry Form Submission",
+      to: email,
+      subject: "Confirmation of Form Submission",
       html: `
         
         
@@ -51,16 +50,16 @@ export async function POST(request) {
                     <title>New Contact Submission</title>
                 </head>
                 <body style="font-family: Arial, sans-serif; line-height: 1.6;">
-                    <h2 style="color: #333;">New Contact Submission</h2>
+                    <h2 style="color: #333;">Thank you for Visit my Page.</h2>
                     <p>Hello,</p>
-                    <p>A new contact submission has been received.</p>
-                    <p><strong>Name:</strong> ${firstName}${lastName}</p>
-                    <p><strong>Email:</strong> <a href="mailto:${email}" style="color: #1a73e8;">${email}</a></p>
-                    <p><strong>Phone:</strong> <a href="tel:${phone}" style="color: #1a73e8;">${phone}</a></p>
-                    <p><strong>Service:</strong>${service}</p>
-                    <p><strong>Message:</strong>${message}</p>
-                    <p>Please follow up with them as soon as possible.</p>
-                    <p>Best regards,<br>Error Makes Clever</p>
+                    <p>I got Your Form Submission Succesfully.</p>
+                    <p><strong>Name: </strong> ${firstName}${lastName}</p>
+                    <p><strong>Email: </strong> <a href="mailto:${email}" style="color: #1a73e8;">${email}</a></p>
+                    <p><strong>Phone: </strong> <a href="tel:${phone}" style="color: #1a73e8;">${phone}</a></p>
+                    <p><strong>Service: </strong>${service}</p>
+                    <p><strong>Message: </strong>${message}</p>
+                    <p>I'll Contact you Soon.</p>
+                    <p>Best regards,<br>Reach Technologies</p>
                 </body>
                 </html>
         `,

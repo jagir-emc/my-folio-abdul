@@ -11,20 +11,9 @@ import Link from "next/link";
 import { BsArrowDownRight } from "react-icons/bs";
 import { ScrollArea } from "../components/ui/scroll-area";
 
-//Resume
+import { about, info, services, skills, testimonials } from "./data";
 
-import {
-  SiGoogleanalytics,
-  SiGoogleads,
-  SiSemrush,
-  SiMailchimp,
-  SiCanva,
-  SiGoogletagmanager,
-  SiBuffer,
-  SiWhatsapp,
-} from "react-icons/si";
-import { FaMeta, FaLeaf, FaDatabase } from "react-icons/fa6";
-import { MdOutlineAutorenew } from "react-icons/md";
+//Resume
 
 import {
   Tabs,
@@ -41,233 +30,19 @@ import {
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import {
-  Select,
-  SelectContent,
-  SelectLabel,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../components/ui/select";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
-import { useState } from "react";
-import sendMail from "../app/fetchEmail/sendmail";
-import { Input } from "../components/ui/input";
-import { Textarea } from "../components/ui/textarea";
-import { Button } from "../components/ui/button";
-
-//Services
-
-const services = [
-  {
-    num: "01",
-    title: "Social Media Marketing",
-    desc: "Our goal is to boost brand awareness, drive website traffic, and generate leads or sales through key social media platforms that best reach our target audience.",
-    href: "",
-  },
-  {
-    num: "02",
-    title: "SEO",
-    desc: "Set of techniques and strategies used to improve the visibility and ranking of a website or web page in search engine results pages (SERPs).",
-    href: "",
-  },
-  {
-    num: "03",
-    title: "PPC Advertising",
-    desc: "Boost your ROI with targeted PPC campaigns. We manage and optimize ads on Google and social media to drive quality traffic and increase conversions.",
-    href: "",
-  },
-  {
-    num: "04",
-    title: "Meta Ads",
-    desc: "Target your ideal audience with Meta Ads. We create and optimize campaigns on Facebook and Instagram to boost brand awareness, engagement, and conversions.",
-    href: "",
-  },
-  {
-    num: "05",
-    title: "Google Ads",
-    desc: "Target your audience with Google Ads. We create and optimize campaigns to increase visibility, drive traffic, and boost conversions.",
-    href: "",
-  },
-  {
-    num: "06",
-    title: "YouTube Optimization",
-    desc: "Enhance your YouTube channel with expert optimization. We improve content, SEO, and engagement to grow your audience and increase views.",
-    href: "",
-  },
-  {
-    num: "07",
-    title: "Email Marketing",
-    desc: "Drive conversions with personalized email marketing. We create engaging content, manage lists, and optimize campaigns to boost loyalty and sales.",
-    href: "",
-  },
-  {
-    num: "08",
-    title: "DM Consultations",
-    desc: "Receive tailored strategies and insights to grow your brand, reach your audience, and enhance online performance with our Digital Marketing Consultations.",
-    href: "",
-  },
-];
-
-//Skillset Data
-
-const skills = {
-  title: "My Skills",
-  desc: "I provide insights and analysis, manage and optimize ad campaigns, enhance SEO strategies, design engaging content, handle tag management, streamline social media efforts, automate communication, and manage CRM and lead generation processes",
-  skillList: [
-    {
-      icon: <SiGoogleanalytics />,
-      name: "Google Analytics",
-    },
-    {
-      icon: <SiGoogleads />,
-      name: "Google Ads",
-    },
-    {
-      icon: <FaMeta />,
-      name: "Meta Ads",
-    },
-    {
-      icon: <SiSemrush />,
-      name: "SemRush",
-    },
-    {
-      icon: <SiMailchimp />,
-      name: "Mailchimp",
-    },
-    {
-      icon: <SiCanva />,
-      name: "Canva",
-    },
-    {
-      icon: <SiGoogletagmanager />,
-      name: "Google Tag Manager",
-    },
-    {
-      icon: <SiBuffer />,
-      name: "Buffer",
-    },
-    {
-      icon: <FaLeaf />,
-      name: "Sprout Social",
-    },
-    {
-      icon: <SiWhatsapp />,
-      name: "Whatsapp Api Tool",
-    },
-    {
-      icon: <FaDatabase />,
-      name: "LeadSquared",
-    },
-    {
-      icon: <MdOutlineAutorenew />,
-      name: "ManyChat",
-    },
-  ],
-};
-
-//About Data
-
-const about = {
-  title: "About Me",
-  desc1:
-    "I am the founder of Reach Technologies, a start-up that provides innovative and impactful solutions for digital marketing and consulting. My passion is to create and implement effective strategies for online platforms and websites, using my skills and knowledge in advanced digital marketing, which I acquired through multiple courses.",
-  desc2:
-    "Before launching my venture, I gained valuable experience as a Data Analyst at Stats Perform, a sports-based company. There, I worked with backend databases and performed data analysis and visualization, using various tools and techniques. I also have a background in Mechanical Engineering, having graduated from Jawahar Engineering College in 2016. I am always eager to learn new things and explore new challenges, and I believe in giving my 100 percent to the work and to achieve the company's goals.",
-  info: [
-    {
-      fieldname: "Email",
-      fieldValue: "divakardj76.dv@gmail.com",
-    },
-    {
-      fieldname: "Linkedin",
-      fieldValue: "Divakar Asokan",
-    },
-    {
-      fieldname: "Language",
-      fieldValue: "English, Tamil",
-    },
-  ],
-};
-
-//Testimonials
-
-const testimonials = [
-  {
-    num: "01",
-    name: "Sri Sai Products",
-    desc: "Good analysis of the market and management of ads. Looking forward to grow bigger together!",
-    Location: "Trichy, India",
-  },
-  {
-    num: "02",
-    name: "Phoenix Aesthetic Centre",
-    desc: "We at Phoenix Aesthetic Centre have had an excellent experience with Reach Technologies! Their expertise in Social Media Management has significantly boosted our online presence, and their personal branding strategies have truly enhanced our clinic's image. Their team is professional, creative, and always responsive to our needs.We highly recommend Reach Technologies for anyone looking to elevate their brand through digital marketing. Thank you for your outstanding work.",
-    Location: "Madipakkam, Chennai",
-  },
-  {
-    num: "03",
-    name: "Vignesh P",
-    desc: "Good customer relationship. And sound knowledge about branding and digital marketing. Will recommend highly",
-    Location: "Chennai, India",
-  },
-  {
-    num: "04",
-    name: "Siva Kumar",
-    desc: "First of all thank you for kind service. It's been 7months since we started work together. Were our phoenix doesn't have any idea about to build a company, we found you and ur approach were really great and tats we are one now. Your ideas and commitment and way of telling and explaining things every month makes amazing. Keep support us like the way now. We will be together forever. Thank you so much",
-    Location: "Chennai, India",
-  },
-  {
-    num: "05",
-    name: "Tariq Ahmed",
-    desc: "Good in digital marketing services, very satisfied, great job",
-    Location: "Chennai, India",
-  },
-];
-
-//Contacts
-
-const info = [
-  {
-    icon: <FaPhoneAlt />,
-    title: "Phone",
-    desc: "(+91) 63798 75675, (+91) 88255 99232",
-  },
-  {
-    icon: <FaEnvelope />,
-    title: "Email",
-    desc: "enquiry.reachtechnologies@gmail.com",
-  },
-  {
-    icon: <FaMapMarkedAlt />,
-    title: "Address",
-    desc: "Meenambalpuram Street, 33/A, Dr. Ambedkar Bridge, Kailasapuram, Mylapore, Chennai, Tamil Nadu 600004",
-  },
-];
+import { Button, Form, Input, Select } from "antd";
+import { mailUser, mailAdmin } from "../app/fetchEmail/sendmail";
+import FormItem from "antd/es/form/FormItem";
+import TextArea from "antd/es/input/TextArea";
 
 const page = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [service, setService] = useState("");
-  const [message, setMessage] = useState("");
-  const values = {
-    firstName,
-    lastName,
-    email,
-    phone,
-    service,
-    message,
+  const handleSubmit = (values) => {
+    console.log("Form Values:", values);
+    mailUser(values);
+    mailAdmin(values);
   };
-  // Function to handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Access the input field values here
-    console.log(values);
-    sendMail(values);
-  };
+
+  const [form] = Form.useForm();
 
   return (
     <main>
@@ -319,7 +94,7 @@ const page = () => {
                 transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
               }}
             >
-              {services.map(({ num, title, desc, href }, index) => {
+              {services.map(({ num, title, desc }, index) => {
                 return (
                   <div
                     key={index}
@@ -506,7 +281,7 @@ const page = () => {
           opacity: 1,
           transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
         }}
-        className="my-16"
+        className="m-16"
       >
         <h2 className="text-center text-5xl font-bold my-16 ">
           Feel Free To Contact Us
@@ -515,8 +290,9 @@ const page = () => {
           <div className="flex flex-col xl:flex-row gap-7">
             {/* Form */}
             <div className=" order-2 xl:order-none">
-              <form
-                onSubmit={handleSubmit}
+              <Form
+                onFinish={handleSubmit}
+                form={form}
                 className="flex flex-col gap-6 bg-[#27272c] p-10 rounded-xl"
               >
                 <h3 className="text-4xl text-accent">
@@ -525,66 +301,126 @@ const page = () => {
 
                 {/* Inputs */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Input
-                    type="text"
-                    placeholder="First Name"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                  />
-                  <Input
-                    type="text"
-                    placeholder="Last Name"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                  />
-                  <Input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <Input
-                    type="tel"
-                    placeholder="Phone Number"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                  />
+                  <FormItem
+                    className="mt-4 custom-required"
+                    name={"firstName"}
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please input your First name!",
+                      },
+                    ]}
+                  >
+                    <Input
+                      placeholder="Firstname"
+                      className="!w-full !p-3 !px-4 !rounded-lg !text-white border-white/10  !bg-primary placeholder:text-white/60 focus:border-accent hover:border-accent"
+                    />
+                  </FormItem>
+                  <FormItem
+                    className="mt-4 custom-required"
+                    name={"lastName"}
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please input your Last name!",
+                      },
+                    ]}
+                  >
+                    <Input
+                      placeholder="lastName"
+                      className="!w-full !p-3 !px-4 !rounded-lg !text-white border-white/10  !bg-primary placeholder:text-white/60 focus:border-accent hover:border-accent"
+                    />
+                  </FormItem>
+
+                  <FormItem
+                    name={"email"}
+                    rules={[
+                      {
+                        required: true,
+                        message: (
+                          <span className="!text-error">
+                            Please input your email!
+                          </span>
+                        ),
+                        type: "email",
+                      },
+                    ]}
+                  >
+                    <Input
+                      placeholder="johndoe@gmail.com"
+                      className="!w-full !p-3 !px-4 !rounded-lg !text-white border-white/10 !bg-primary placeholder:text-white/60 focus:border-accent hover:border-accent"
+                    />
+                  </FormItem>
+                  <FormItem
+                    className="!font-medium !flex !w-full"
+                    name="mobile"
+                    rules={[
+                      { required: true, message: "Please input your Mobile!" },
+                      {
+                        pattern: /^[0-9]{7,15}$/,
+                        message: "Please Enter correct Mobile number!",
+                      },
+                    ]}
+                  >
+                    <Input
+                      placeholder="8220612345"
+                      className="!w-full !p-3 !px-4 !rounded-lg !text-white border-white/10 !bg-primary placeholder:text-white/60 focus:border-accent hover:border-accent"
+                    />
+                  </FormItem>
                 </div>
 
                 {/* Select */}
-                <div>
-                  <Select value={service} onValueChange={setService}>
-                    <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Select a Service" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectGroup>
-                        <SelectLabel>Select a Service</SelectLabel>
-                        <SelectItem value="Web Development">
-                          Web Development
-                        </SelectItem>
-                        <SelectItem value="UI/UX Design">
-                          UI/UX Design
-                        </SelectItem>
-                        <SelectItem value="Logo Design">Logo Design</SelectItem>
-                        <SelectItem value="SEO">SEO</SelectItem>
-                      </SelectGroup>
-                    </SelectContent>
+
+                <Form.Item
+                  className="placeholder:text-white flex flex-col"
+                  label={<span className="text-white/60">Select Service</span>}
+                  name="services"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please select a service!", // Correct validation message for selection
+                    },
+                  ]}
+                >
+                  <Select
+                    placeholder="Select Service"
+                    className="!w-full !rounded-lg !text-white outline-none border-white/10 bg-primary focus:border-accent hover:border-accent"
+                  >
+                    <Select.Option value="Web Development">
+                      Web Development
+                    </Select.Option>
+                    <Select.Option value="UI/UX Design">
+                      UI/UX Design
+                    </Select.Option>
+                    <Select.Option value="Logo Design">
+                      Logo Design
+                    </Select.Option>
+                    <Select.Option value="SEO">SEO</Select.Option>
                   </Select>
-                </div>
+                </Form.Item>
 
                 {/* TextArea */}
-                <Textarea
-                  placeholder="Type your message here"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                />
+                <FormItem
+                  name={"message"}
+                  rules={[
+                    { required: true, message: "Please input your message!" },
+                  ]}
+                >
+                  <TextArea
+                    placeholder="Drop Your Message"
+                    className="!w-full !p-3 !px-4 !rounded-lg !text-white border-white/10 !bg-primary placeholder:text-white/60 focus:border-accent hover:border-accent"
+                  />
+                </FormItem>
 
                 {/* Button */}
-                <Button type="submit" size="md" className="max-w-48">
-                  Send Message
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  className="max-w-48 bg-accent rounded-xl hover:bg-accent-hover"
+                >
+                  <a className="">Send Message</a>
                 </Button>
-              </form>
+              </Form>
             </div>
             {/* Info */}
             <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">

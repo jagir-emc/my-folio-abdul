@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "../../components/ui/button";
+import { ButtonCn } from "../../components/ui/button.jsx";
 import { Input } from "../../components/ui/input";
 import { Textarea } from "../../components/ui/textarea";
 
@@ -134,10 +134,10 @@ const Contact = () => {
                 onChange={(e) => setMessage(e.target.value)}
               />
 
-              {/* Button */}
-              <Button type="submit" size="md" className="max-w-48">
+              {/* ButtonCn */}
+              <ButtonCn type="submit" size="md" className="max-w-48">
                 Send Message
-              </Button>
+              </ButtonCn>
             </form>
           </div>
           {/* Info */}

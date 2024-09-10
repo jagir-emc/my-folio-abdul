@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/app/fetchEmail/sendmail.js", "src/app/api/mailData/route.js"  ],
+, "src/app/fetchEmail/sendmail.js", "src/app/api/mail/admin/route.js"  ],
   "exclude": [
     "node_modules"
   ]

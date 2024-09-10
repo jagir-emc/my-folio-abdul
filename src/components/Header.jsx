@@ -2,7 +2,7 @@ import Link from "next/link";
 
 //Component
 import Nav from "./Nav";
-import { Button } from "./ui/button";
+import { ButtonCn } from "./ui/button";
 import MobileNav from "./MobileNav";
 import {FaPhoneAlt} from "react-icons/fa"
 
@@ -21,10 +21,10 @@ const Header = () => {
         <div className="hidden xl:flex items-center gap-8">
           {/* <Nav /> */}
           <Link href={"https://calendly.com/reachtechnologies"} target="_blank">
-            <Button className="flex flex-col">
+            <ButtonCn className="flex flex-col">
               <span className="text-xs">For Consulting</span>
               <span className="flex justify-center items-center gap-2 text-[]"> Book Now <FaPhoneAlt/></span>
-            </Button>
+            </ButtonCn>
           </Link>
         </div>
 
