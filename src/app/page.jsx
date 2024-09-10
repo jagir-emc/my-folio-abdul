@@ -35,7 +35,7 @@ import { mailUser, mailAdmin } from "../app/fetchEmail/sendmail";
 import FormItem from "antd/es/form/FormItem";
 import TextArea from "antd/es/input/TextArea";
 
-const page = () => {
+const Home = () => {
   const handleSubmit = (values) => {
     console.log("Form Values:", values);
     mailUser(values);
@@ -447,4 +447,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Home;
