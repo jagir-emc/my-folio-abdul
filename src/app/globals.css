@@ -2,15 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-  body{
+@layer base {
+  body {
     @apply font-primary bg-primary text-white leading-loose;
   }
-  .text-outline{
+  .text-outline {
     -webkit-text-stroke: 1px #fff;
   }
-  .text-outline-hover{
+  .text-outline-hover {
     -webkit-text-stroke: 1px #b29953;
   }
 }
-  

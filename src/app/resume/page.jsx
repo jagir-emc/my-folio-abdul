@@ -26,14 +26,19 @@ import { MdOutlineAutorenew } from "react-icons/md";
 // import bage from "@/assets/images/resume/badge.svg";
 // import cap from "@/assets/images/resume/cap.svg";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../components/ui/tabs";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { ScrollArea } from "@/components/ui/scroll-area";
+} from "../../components/ui/tooltip";
+import { ScrollArea } from "../../components/ui/scroll-area";
 
 //About Data
 

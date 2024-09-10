@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { Textarea } from "../../components/ui/textarea";
 
 import {
   Select,
@@ -12,11 +12,13 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../../components/ui/select";
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
+import sendMail from "../fetchEmail/sendmail.js";
 
 const info = [
   {
@@ -37,6 +39,28 @@ const info = [
 ];
 
 const Contact = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [service, setService] = useState("");
+  const [message, setMessage] = useState("");
+  const values = {
+    firstName,
+    lastName,
+    email,
+    phone,
+    service,
+    message,
+  };
+  // Function to handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Access the input field values here
+    console.log(values);
+    sendMail(values);
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -48,45 +72,70 @@ const Contact = () => {
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-7">
           {/* Form */}
-          <div className="xl:h-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 bg-[#27272c] p-10 rounded-xl">
+          <div className=" order-2 xl:order-none">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-6 bg-[#27272c] p-10 rounded-xl"
+            >
               <h3 className="text-4xl text-accent">Let{"'"}s Work Together </h3>
-              <p className="text-white/60 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                perspiciatis ipsum deserunt accusamus laboriosam.
-              </p>
+
               {/* Inputs */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeHolder="FirstName" />
-                <Input type="lastname" placeHolder="LastName" />
-                <Input type="email" placeHolder="Email" />
-                <Input type="phone" placeHolder="Phone Number" />
+                <Input
+                  type="text"
+                  placeholder="First Name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
+                <Input
+                  type="text"
+                  placeholder="Last Name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <Input
+                  type="tel"
+                  placeholder="Phone Number"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
               </div>
-              {/* Select */}
 
+              {/* Select */}
               <div>
-                <Select>
+                <Select value={service} onValueChange={setService}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select a Service" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
                       <SelectLabel>Select a Service</SelectLabel>
-                      <SelectItem value="est">Web Development</SelectItem>
-                      <SelectItem value="cst">Ui/UX Design</SelectItem>
-                      <SelectItem value="mst">Logo Design</SelectItem>
-                      <SelectItem value="hst">SEO</SelectItem>
+                      <SelectItem value="Web Development">
+                        Web Development
+                      </SelectItem>
+                      <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
+                      <SelectItem value="Logo Design">Logo Design</SelectItem>
+                      <SelectItem value="SEO">SEO</SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>
               </div>
 
               {/* TextArea */}
+              <Textarea
+                placeholder="Type your message here"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
 
-              <Textarea placeHolder="Type yor message here" />
-
-              {/* Btn */}
-              <Button size="md" className="max-w-48">
+              {/* Button */}
+              <Button type="submit" size="md" className="max-w-48">
                 Send Message
               </Button>
             </form>

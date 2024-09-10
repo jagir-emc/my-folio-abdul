@@ -10,44 +10,46 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import Link from "next/link";
+} from "../../components/ui/tooltip";
 import Image from "next/image";
-import img1 from "@/assets/images/work/thumb1.png";
-import img2 from "@/assets/images/work/thumb2.png";
-import img3 from "@/assets/images/work/thumb3.png";
-import SliderBtn from "@/components/SliderBtn";
+import img1 from "../../assets/images/work/thumb1.png";
+import SliderBtn from "../../components/SliderBtn";
 
 const projects = [
   {
     num: "01",
-    cate: "Front-end",
-    title: "Project 01",
-    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, placeat laudantium aspernatur rem atque odio.",
-    stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "Javascript" }],
+    name: "Sri Sai Products",
+    desc: "Good analysis of the market and management of ads. Looking forward to grow bigger together!",
+    Location: "Trichy, India",
     img: img1,
-    live: "",
-    github: "",
   },
   {
     num: "02",
-    cate: "Full Stack",
-    title: "Project 02",
-    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, placeat laudantium aspernatur rem atque odio.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind" }, { name: "Node.js" }],
-    img: img2,
-    live: "",
-    github: "",
+    name: "Phoenix Aesthetic Centre",
+    desc: "We at Phoenix Aesthetic Centre have had an excellent experience with Reach Technologies! Their expertise in Social Media Management has significantly boosted our online presence, and their personal branding strategies have truly enhanced our clinic's image. Their team is professional, creative, and always responsive to our needs.We highly recommend Reach Technologies for anyone looking to elevate their brand through digital marketing. Thank you for your outstanding work.",
+    Location: "Madipakkam, Chennai",
+    img: img1,
   },
   {
     num: "03",
-    cate: "Front-end",
-    title: "Project 03",
-    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, placeat laudantium aspernatur rem atque odio.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind" }],
-    img: img3,
-    live: "",
-    github: "",
+    name: "Vignesh P",
+    desc: "Good customer relationship. And sound knowledge about branding and digital marketing. Will recommend highly",
+    Location: "Chennai, India",
+    img: img1,
+  },
+  {
+    num: "04",
+    name: "Siva Kumar",
+    desc: "First of all thank you for kind service. It's been 7months since we started work together. Were our phoenix doesn't have any idea about to build a company, we found you and ur approach were really great and tats we are one now. Your ideas and commitment and way of telling and explaining things every month makes amazing. Keep support us like the way now. We will be together forever. Thank you so much",
+    Location: "Chennai, India",
+    img: img1,
+  },
+  {
+    num: "05",
+    name: "Tariq Ahmed",
+    desc: "Good in digital marketing services, very satisfied, great job",
+    Location: "Chennai, India",
+    img: img1,
   },
 ];
 const Works = () => {
@@ -71,35 +73,35 @@ const Works = () => {
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-7">
-          <div className="w-full xl:w-1/2 xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-7 h-1/2">
-              {/* outline num */}
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
-                {project.num}
-              </div>
-              {/* Project Category */}
-              <h2 className="text-4xl font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.cate} Project
-              </h2>
-              {/* Project Description */}
-              <p className="text-white/60">{project.desc}</p>
-              {/* Stack */}
-              <ul className="flex gap-4">
-                {project.stack.map(({ name }, index) => {
-                  return (
-                    <li className=" text-accent" key={index}>
-                      {name}
-                      {index !== project.stack.length - 1 && " ,"}
-                    </li>
-                  );
-                })}
-              </ul>
-              {/* Border */}
-              <div className="border border-white/20" />
-              {/* Buttons */}
-              <div className="flex gap-4">
-                {/* Live Project Buttons */}
-                <Link href={project.live}>
+          <div className="w-full ">
+            <Swiper spaceBetween={30} slidesPerView={1} className="flex">
+              {projects.map(({ img }, index) => {
+                return (
+                  <SwiperSlide key={index} className="w-full">
+                    <SliderBtn
+                      containerStyles="flex gap-2 w-full justify-between xl:w-max xl:justify-none"
+                      btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+                    />
+                    <div className="w-full xl:h-4/5 flex flex-col xl:justify-between order-2 xl:order-none">
+                      <div className="flex flex-col gap-7 h-1/2">
+                        {/* outline num */}
+                        <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+                          {project.num}
+                        </div>
+                        {/* Project Category */}
+                        <h2 className="text-4xl font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+                          {project.name}
+                        </h2>
+                        {/* Project Description */}
+                        <p className="text-white/60">{project.desc}</p>
+                        {/* Stack */}
+                        <p className=" text-accent">{project.Location}</p>
+                        {/* Border */}
+                        <div className="border border-white/20" />
+                        {/* Buttons */}
+                        <div className="flex gap-4">
+                          {/* Live Project Buttons */}
+                          {/* <Link href={project.live}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="size-16 rounded-full bg-white/5 flex justify-center items-center group">
@@ -110,10 +112,10 @@ const Works = () => {
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
-                </Link>
+                </Link> */}
 
-                {/* Github Buttons */}
-                <Link href={project.github}>
+                          {/* Github Buttons */}
+                          {/* <Link href={project.github}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="size-16 rounded-full bg-white/5 flex justify-center items-center group">
@@ -124,40 +126,13 @@ const Works = () => {
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="w-full xl:w-1/2">
-            <Swiper
-              spaceBetween={30}
-              slidesPerView={1}
-              onSlideChange={handleSlideChange}
-              className="xl:h-[520px] flex"
-            >
-              {projects.map(({ img }, index) => {
-                return (
-                  <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                      {/*Overlay*/}
-                      <div className="absolute top-0 bottom-0 size-full bg-black/10 z-10"></div>
-                      {/*Image*/}
-                      <div className="relative size-full">
-                        <Image
-                          className="object-cover"
-                          src={project.img}
-                          alt="Image"
-                          fill
-                        />
+                </Link> */}
+                        </div>
                       </div>
                     </div>
                   </SwiperSlide>
                 );
               })}
-              <SliderBtn
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
-              />
             </Swiper>
           </div>
         </div>
