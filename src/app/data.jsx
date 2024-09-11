@@ -151,15 +151,15 @@ export const about = {
 export const testimonials = [
   {
     num: "01",
-    name: "Sri Sai Products",
-    desc: "Good analysis of the market and management of ads. Looking forward to grow bigger together!",
-    Location: "Trichy, India",
-  },
-  {
-    num: "02",
     name: "Phoenix Aesthetic Centre",
     desc: "We at Phoenix Aesthetic Centre have had an excellent experience with Reach Technologies! Their expertise in Social Media Management has significantly boosted our online presence, and their personal branding strategies have truly enhanced our clinic's image. Their team is professional, creative, and always responsive to our needs.We highly recommend Reach Technologies for anyone looking to elevate their brand through digital marketing. Thank you for your outstanding work.",
     Location: "Madipakkam, Chennai",
+  },
+  {
+    num: "02",
+    name: "Sri Sai Products",
+
+    Location: "Trichy, India",
   },
   {
     num: "03",

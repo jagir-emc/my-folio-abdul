@@ -281,7 +281,7 @@ const Home = () => {
           opacity: 1,
           transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
         }}
-        className="m-16"
+        className="my-16"
       >
         <h2 className="text-center text-5xl font-bold my-16 ">
           Feel Free To Contact Us
