@@ -353,7 +353,7 @@ const Home = () => {
                   </FormItem>
                   <FormItem
                     className="!font-medium !flex !w-full"
-                    name="mobile"
+                    name="phone"
                     rules={[
                       { required: true, message: "Please input your Mobile!" },
                       {
@@ -374,7 +374,7 @@ const Home = () => {
                 <Form.Item
                   className="placeholder:text-white flex flex-col"
                   label={<span className="text-white/60">Select Service</span>}
-                  name="services"
+                  name="service"
                   rules={[
                     {
                       required: true,
