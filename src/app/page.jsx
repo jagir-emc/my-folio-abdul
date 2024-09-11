@@ -386,16 +386,19 @@ const Home = () => {
                     placeholder="Select Service"
                     className="!w-full !rounded-lg !text-white outline-none border-white/10 bg-primary focus:border-accent hover:border-accent"
                   >
-                    <Select.Option value="Web Development">
-                      Web Development
+                    <Select.Option value="Social Media Marketing">
+                    Social Media Marketing
                     </Select.Option>
-                    <Select.Option value="UI/UX Design">
-                      UI/UX Design
+                    <Select.Option value="SEO">
+                    SEO
                     </Select.Option>
-                    <Select.Option value="Logo Design">
-                      Logo Design
+                    <Select.Option value="PPC Advertising">
+                    PPC Advertising
                     </Select.Option>
-                    <Select.Option value="SEO">SEO</Select.Option>
+                    <Select.Option value="Meta Ads">Meta Ads</Select.Option>
+                    <Select.Option value="Google Ads">Google Ads</Select.Option>
+                    <Select.Option value="Web Development">Web Development</Select.Option>
+                    <Select.Option value="Others">Others</Select.Option>
                   </Select>
                 </Form.Item>
 

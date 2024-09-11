@@ -53,7 +53,7 @@ export async function POST(request) {
                     <h2 style="color: #333;">Thank you for Visit my Page.</h2>
                     <p>Hello,</p>
                     <p>I got Your Form Submission Succesfully.</p>
-                    <p><strong>Name: </strong> ${firstName}${lastName}</p>
+                    <p><strong>Name: </strong> ${firstName}${" "}${lastName}</p>
                     <p><strong>Email: </strong> <a href="mailto:${email}" style="color: #1a73e8;">${email}</a></p>
                     <p><strong>Phone: </strong> <a href="tel:${phone}" style="color: #1a73e8;">${phone}</a></p>
                     <p><strong>Service: </strong>${service}</p>
