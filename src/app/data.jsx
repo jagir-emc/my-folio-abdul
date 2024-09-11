@@ -158,7 +158,7 @@ export const testimonials = [
   {
     num: "02",
     name: "Sri Sai Products",
-
+    desc: "Good analysis of the market and management of ads. Looking forward to grow bigger together!",
     Location: "Trichy, India",
   },
   {
@@ -168,13 +168,13 @@ export const testimonials = [
     Location: "Chennai, India",
   },
   {
-    num: "04",
+    num: "05",
     name: "Tariq Ahmed",
     desc: "Good in digital marketing services, very satisfied, great job",
     Location: "Chennai, India",
   },
   {
-    num: "05",
+    num: "04",
     name: "Siva Kumar",
     desc: "First of all thank you for kind service. It's been 7months since we started work together. Were our phoenix doesn't have any idea about to build a company, we found you and ur approach were really great and tats we are one now. Your ideas and commitment and way of telling and explaining things every month makes amazing. Keep support us like the way now. We will be together forever. Thank you so much",
     Location: "Chennai, India",
