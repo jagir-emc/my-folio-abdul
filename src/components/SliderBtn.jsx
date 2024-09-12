@@ -7,7 +7,7 @@ const SliderBtn = ({ containerStyles, iconStyles, btnStyles }) => {
   const swiper = useSwiper(); // Get the swiper instance
 
   return (
-    <div className={containerStyles}>
+    <div className="{containerStyles} flex justify-between">
       <button className={btnStyles} onClick={() => swiper.slidePrev()}>
         <PiCaretLeftBold className={iconStyles} />
       </button>

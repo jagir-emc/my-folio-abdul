@@ -240,7 +240,7 @@ const Home = () => {
                     return (
                       <SwiperSlide key={index} className="w-full">
                         <SliderBtn
-                          containerStyles="flex gap-2 w-full justify-between xl:w-max xl:justify-none"
+                          containerStyles="flex gap-2 w-full justify-end xl:w-max xl:justify-none"
                           btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
                         />
                         <div className="w-full xl:h-4/5 flex flex-col xl:justify-between order-2 xl:order-none mt-10">
@@ -387,17 +387,17 @@ const Home = () => {
                     className="!w-full !rounded-lg !text-white outline-none border-white/10 bg-primary focus:border-accent hover:border-accent"
                   >
                     <Select.Option value="Social Media Marketing">
-                    Social Media Marketing
+                      Social Media Marketing
                     </Select.Option>
-                    <Select.Option value="SEO">
-                    SEO
-                    </Select.Option>
+                    <Select.Option value="SEO">SEO</Select.Option>
                     <Select.Option value="PPC Advertising">
-                    PPC Advertising
+                      PPC Advertising
                     </Select.Option>
                     <Select.Option value="Meta Ads">Meta Ads</Select.Option>
                     <Select.Option value="Google Ads">Google Ads</Select.Option>
-                    <Select.Option value="Web Development">Web Development</Select.Option>
+                    <Select.Option value="Web Development">
+                      Web Development
+                    </Select.Option>
                     <Select.Option value="Others">Others</Select.Option>
                   </Select>
                 </Form.Item>
