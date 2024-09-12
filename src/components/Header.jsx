@@ -1,9 +1,7 @@
 import Link from "next/link";
 
 //Component
-import Nav from "./Nav";
 import { ButtonCn } from "./ui/button";
-import MobileNav from "./MobileNav";
 import { FaPhoneAlt } from "react-icons/fa";
 
 const Header = () => {
@@ -20,7 +18,7 @@ const Header = () => {
 
         {/* DeskNav and Hire Me Btn */}
         <div className="flex items-center xl:gap-8">
-          {/* <Nav /> */}
+         
           <Link href={"https://calendly.com/reachtechnologies"} target="_blank">
             <ButtonCn className="flex flex-col">
               <span className="text-xs">For_Consulting</span>
@@ -31,11 +29,6 @@ const Header = () => {
             </ButtonCn>
           </Link>
         </div>
-
-        {/* Mobile Nav */}
-        {/* <div className="xl:hidden">
-          <MobileNav />
-        </div> */}
       </div>
     </header>
   );
