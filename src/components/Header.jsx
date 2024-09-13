@@ -17,8 +17,7 @@ const Header = () => {
         </Link>
 
         {/* DeskNav and Hire Me Btn */}
-        <div className="flex items-center xl:gap-8">
-         
+        <div className="md:flex items-center xl:gap-8 hidden">
           <Link href={"https://calendly.com/reachtechnologies"} target="_blank">
             <ButtonCn className="flex flex-col">
               <span className="text-xs">For_Consulting</span>

@@ -33,7 +33,7 @@ const Stats = () => {
             return (
               <div
                 key={index}
-                className="flex-1 flex gap-4 items-center justify-center xl:justify-start"
+                className="flex-1 flex gap-1 md:gap-4 items-center justify-center xl:justify-start"
               >
                 <CountUp
                   end={num}
@@ -47,7 +47,7 @@ const Stats = () => {
                 <p
                   className={`${
                     text.length < 18 ? "max-w-24" : "max-w-36"
-                  } leading-snug text-white/80`}
+                  } leading-snug text-white/80 text-xs`}
                 >
                   {txt} {text}
                 </p>

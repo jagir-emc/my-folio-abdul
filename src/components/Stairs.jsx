@@ -28,7 +28,8 @@ creating a staggered effect with decreasing delay for each subsequent step.
 */}
 
       {[...Array(6)].map((_, index) => {
-        return(<motion.div
+        return (
+          <motion.div
             key={index}
             variants={stairsAnime}
             initial="initial"
@@ -39,8 +40,9 @@ creating a staggered effect with decreasing delay for each subsequent step.
               ease: "easeInOut",
               delay: reverseIndex(index) * 0.1,
             }}
-            className="h-full w-full bg-white relative"
-          />)
+            className="h-full w-full z-50 bg-white relative"
+          />
+        );
       })}
     </>
   );

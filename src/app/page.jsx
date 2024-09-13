@@ -30,19 +30,20 @@ import {
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Button, Form, Input, Select } from "antd";
+import { Button, Form, Input, Select, message } from "antd";
 import { mailUser, mailAdmin } from "../app/fetchEmail/sendmail";
 import FormItem from "antd/es/form/FormItem";
 import TextArea from "antd/es/input/TextArea";
 
 const Home = () => {
+  const [form] = Form.useForm();
+
   const handleSubmit = (values) => {
-    console.log("Form Values:", values);
     mailUser(values);
     mailAdmin(values);
+    form.resetFields();
+    message.success("Data Received Successfully!", 3);
   };
-
-  const [form] = Form.useForm();
 
   return (
     <main>
@@ -82,8 +83,10 @@ const Home = () => {
 
       {/* Services */}
 
-      <section className=" flex flex-col justify-center mt-10 py-5">
-        <h2 className="text-center text-5xl font-bold my-10">Services</h2>
+      <section className=" flex flex-col justify-center md:mt-10 md:py-5">
+        <h2 className="text-center text-3xl md:text-5xl font-bold my-10">
+          Services
+        </h2>
         <div className="container mx-auto">
           <ScrollArea className="h-screen">
             <motion.div
@@ -111,7 +114,7 @@ const Home = () => {
                         <BsArrowDownRight className="text-primary text-3xl" />
                       </Link>
                     </div>
-                    <h2 className="text-4xl font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
+                    <h2 className="text-3xl font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
                       {title}
                     </h2>
                     <p className="text-white/60">{desc}</p>
@@ -126,8 +129,10 @@ const Home = () => {
 
       {/* Resume */}
 
-      <section className="my-10">
-        <h2 className="text-center text-5xl font-bold my-16">About</h2>
+      <section className="my-5 md:my-20">
+        <h2 className="text-center text-3xl xl:text-5xl font-bold my-16">
+          About
+        </h2>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
@@ -149,7 +154,9 @@ const Home = () => {
                 <TabsContent value="skills" className="w-full h-full">
                   <div className="flex flex-col gap-7">
                     <div className="flex flex-col gap-7 text-center xl:text-left">
-                      <h3 className="text-4xl font-bold">{skills.title}</h3>
+                      <h3 className="text-2xl md:text-4xl font-bold">
+                        {skills.title}
+                      </h3>
                       <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                         {skills.desc}
                       </p>
@@ -184,7 +191,9 @@ const Home = () => {
                 >
                   <div className="flex flex-col gap-7">
                     <div className="flex flex-col gap-7 text-center xl:text-left">
-                      <h3 className="text-4xl font-bold">{about.title}</h3>
+                      <h3 className="text-2xl md:text-4xl font-bold">
+                        {about.title}
+                      </h3>
                       <ScrollArea className="h-96">
                         <p className=" text-white/60 mx-auto xl:mx-0">
                           {about.desc1}
@@ -223,7 +232,9 @@ const Home = () => {
       {/* Testimonials */}
 
       <section className="mt-16">
-        <h2 className="text-center text-5xl font-bold mty-16 ">Testimonials</h2>
+        <h2 className="text-center text-3xl  md:text-5xl font-bold md:my-16 ">
+          Testimonials
+        </h2>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
@@ -246,11 +257,11 @@ const Home = () => {
                         <div className="w-full xl:h-4/5 flex flex-col xl:justify-between order-2 xl:order-none mt-10">
                           <div className="flex flex-col gap-7 xl:h-1/2">
                             {/* outline num */}
-                            <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+                            <div className="text-5xl md:text-8xl leading-none font-extrabold text-transparent text-outline">
                               {num}
                             </div>
                             {/* Project Category */}
-                            <h2 className="text-4xl font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+                            <h2 className="text-3xl xl:text-4xl font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
                               {name}
                             </h2>
                             {/* Project Description */}
@@ -283,7 +294,7 @@ const Home = () => {
         }}
         className="my-16"
       >
-        <h2 className="text-center text-5xl font-bold my-16 ">
+        <h2 className="text-center text-3xl md:text-5xl font-bold my-16 ">
           Feel Free To Contact Us
         </h2>
         <div className="container mx-auto">
@@ -293,16 +304,16 @@ const Home = () => {
               <Form
                 onFinish={handleSubmit}
                 form={form}
-                className="flex flex-col gap-6 bg-[#27272c] p-10 rounded-xl"
+                className="flex flex-col md:gap-6 bg-[#27272c] py-8 px-3 rounded-xl"
               >
-                <h3 className="text-4xl text-accent">
+                <h3 className="text-2xl md:text-4xl font-bold text-accent">
                   Let{"'"}s Work Together{" "}
                 </h3>
 
                 {/* Inputs */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6 mt-6">
                   <FormItem
-                    className="mt-4 custom-required"
+                    className=" custom-required"
                     name={"firstName"}
                     rules={[
                       {
@@ -317,7 +328,7 @@ const Home = () => {
                     />
                   </FormItem>
                   <FormItem
-                    className="mt-4 custom-required"
+                    className="custom-required"
                     name={"lastName"}
                     rules={[
                       {
@@ -352,7 +363,7 @@ const Home = () => {
                     />
                   </FormItem>
                   <FormItem
-                    className="!font-medium !flex !w-full"
+                    className="!font-medium !w-full"
                     name="phone"
                     rules={[
                       { required: true, message: "Please input your Mobile!" },
@@ -372,7 +383,7 @@ const Home = () => {
                 {/* Select */}
 
                 <Form.Item
-                  className="placeholder:text-white flex flex-col"
+                  className="placeholder:text-white"
                   label={<span className="text-white/60">Select Service</span>}
                   name="service"
                   rules={[
@@ -384,7 +395,7 @@ const Home = () => {
                 >
                   <Select
                     placeholder="Select Service"
-                    className="!w-full !rounded-lg !text-white outline-none border-white/10 bg-primary focus:border-accent hover:border-accent"
+                    className="!w-full !rounded-lg !text-white !outline-none !border-white/10 !bg-primary !focus:border-accent !hover:border-accent"
                   >
                     <Select.Option value="Social Media Marketing">
                       Social Media Marketing
@@ -427,16 +438,16 @@ const Home = () => {
             </div>
             {/* Info */}
             <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
-              <ul className="flex flex-col gap-10">
+              <ul className="flex flex-col gap-10 ">
                 {info.map(({ icon, title, desc }, index) => {
                   return (
-                    <li key={index} className="flex items-center gap-4">
-                      <div className="size-14 xl:size-20 bg-[#27272c] text-accent rounded-md flex items-center justify-center">
+                    <li key={index} className="flex items-center gap-2">
+                      <div className="size-10 xl:size-20 bg-[#27272c] text-accent rounded-md flex items-center justify-center">
                         <div>{icon}</div>
                       </div>
                       <div className="flex-1">
                         <p className="text-white/60">{title}</p>
-                        <h3 className="">{desc}</h3>
+                        <h3 className="text-xs">{desc}</h3>
                       </div>
                     </li>
                   );
@@ -446,6 +457,17 @@ const Home = () => {
           </div>
         </div>
       </motion.section>
+
+      <Social
+        containerStyles="flex justify-center gap-3 md:gap-6 my-5"
+        iconStyles="size-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent  hover:text-primary hover:transition-all duration-500"
+      />
+
+      <div className="flex justify-center px-2">
+        <p className="py-5 px-5 border-t-2 border-accent inline-block text-xs text-center">
+          © 2024 Reach Technologies. All Rights Reserved.
+        </p>
+      </div>
     </main>
   );
 };
