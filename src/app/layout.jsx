@@ -6,7 +6,6 @@ import Header from "../components/Header";
 import PageTransition from "../components/PageTransition";
 import StairTrans from "../components/StairTrans";
 import BackToTop from "../components/BackToTop";
-import WhatsappIcon from "../components/WhatsappIcon";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -27,7 +26,6 @@ export default function RootLayout({ children }) {
         <StairTrans />
         <PageTransition>{children}</PageTransition>
         <BackToTop />
-        <WhatsappIcon />
       </body>
     </html>
   );

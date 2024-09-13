@@ -2,7 +2,7 @@ import Link from "next/link";
 
 //Component
 import { ButtonCn } from "./ui/button";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -17,16 +17,32 @@ const Header = () => {
         </Link>
 
         {/* DeskNav and Hire Me Btn */}
-        <div className="md:flex items-center xl:gap-8 hidden">
-          <Link href={"https://calendly.com/reachtechnologies"} target="_blank">
-            <ButtonCn className="flex flex-col">
-              <span className="text-xs">For_Consulting</span>
-              <span className="flex justify-center items-center xl:gap-2 text-sm">
-                {" "}
-                Book Now <FaPhoneAlt />
-              </span>
-            </ButtonCn>
-          </Link>
+        <div className="flex gap-5 ">
+          <div className="md:flex items-center xl:gap-8 hidden">
+            <Link
+              href={"https://calendly.com/reachtechnologies"}
+              target="_blank"
+            >
+              <ButtonCn className="flex flex-col">
+                <span className="text-xs">For_Consulting</span>
+                <span className="flex justify-center items-center xl:gap-2 text-sm">
+                  {" "}
+                  Book Now <FaPhoneAlt />
+                </span>
+              </ButtonCn>
+            </Link>
+          </div>
+
+          <div className="">
+            <button
+              className="bg-accent text-white p-3 rounded-full shadow-lg hover:bg-accent-hover focus:outline-none transition duration-300"
+              aria-label="Back to Top"
+            >
+              <Link href="https://wa.me/message/QI6MZW6UZMNPA1" target="_blank">
+                <FaWhatsapp className="text-xl" />
+              </Link>
+            </button>
+          </div>
         </div>
       </div>
     </header>
