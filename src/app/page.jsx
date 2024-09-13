@@ -34,6 +34,8 @@ import { Button, Form, Input, Select, message } from "antd";
 import { mailUser, mailAdmin } from "../app/fetchEmail/sendmail";
 import FormItem from "antd/es/form/FormItem";
 import TextArea from "antd/es/input/TextArea";
+import { ButtonCn } from "../components/ui/button";
+import { FaPhoneAlt } from "react-icons/fa";
 
 const Home = () => {
   const [form] = Form.useForm();
@@ -67,6 +69,20 @@ const Home = () => {
             {/* //Photo */}
             <div className="order-1 xl:order-none mb-8 xl:mb-0">
               <Photo />
+            </div>
+            <div className="flex items-center xl:gap-8 md:hidden order-3">
+              <Link
+                href={"https://calendly.com/reachtechnologies"}
+                target="_blank"
+              >
+                <ButtonCn className="flex flex-col">
+                  <span className="text-xs">For_Consulting</span>
+                  <span className="flex justify-center items-center xl:gap-2 text-sm">
+                    {" "}
+                    Book Now <FaPhoneAlt />
+                  </span>
+                </ButtonCn>
+              </Link>
             </div>
           </div>
         </div>
